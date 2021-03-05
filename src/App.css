@@ -1,0 +1,21 @@
+.singleTask{
+    width: 700px;
+    border: 1px black solid;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.deleteButton{
+    background-color: transparent;
+    border: 1px red solid;
+    width: 50px;
+    background-color: red;
+    color: white;
+    font-size: 36px;
+}
+
+.deleteButton:hover{
+    font-size: 24px;
+    background-color: #000000;
+}
