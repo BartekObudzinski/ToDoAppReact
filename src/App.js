@@ -8,5 +8,5 @@ function App() {
     </div>
   );
 }
-//zesrtalem sie
+
 export default App;

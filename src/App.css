@@ -1,4 +1,5 @@
-.singleTask {
+.singleTask,
+.singleDoneTask {
   width: 700px;
   border: 1px black solid;
   display: flex;
