@@ -28,7 +28,7 @@ const ToDoForm = () => {
 
   return (
     <div className="ToDoForm">
-      <form>
+      <form className="dupa">
         <input
           value={todoValue}
           type="text"
