@@ -3,12 +3,13 @@ import { useState } from "react";
 const ToDoForm = () => {
   const [todoValue, setTodoValue] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
+  const [todoDoneTasks, setTodoDoneTasks] = useState([]);
 
   const addTask = (e) => {
     e.preventDefault();
     if (todoValue != "") {
       setTodoTasks([...todoTasks, todoValue]);
-      console.log(...todoTasks);
+      console.log(...todoTasks, todoValue);
       setTodoValue("");
     }
   };
@@ -20,10 +21,11 @@ const ToDoForm = () => {
     ]);
   };
 
-  /* const index = array.indexOf(5);
-  if (index > -1) {
-    array.splice(index, 1);
-  }*/
+  const handleDone = (index) => {
+    setTodoDoneTasks((done) => done.concat(todoTasks[index]));
+    console.log(todoDoneTasks);
+  };
+
   return (
     <div className="ToDoForm">
       <form>
@@ -42,13 +44,30 @@ const ToDoForm = () => {
         {todoTasks.map((singleTask, index) => (
           <div className="singleTask">
             <p>{singleTask}</p>
-            <button
-              className="deleteButton"
-              onClick={() => handleRemove(index)}
-            >
-              X
-            </button>
+            <div className="buttonsContainer">
+              <button
+                className="deleteButton"
+                onClick={() => handleRemove(index)}
+              >
+                X
+              </button>
+              <button
+                className="doneButton"
+                onClick={() => {
+                  handleDone(index);
+                  handleRemove(index);
+                }}
+              >
+                ✔
+              </button>
+            </div>
           </div>
+        ))}
+      </div>
+      <div className="tasksdone">
+        <h2>Wykonane taski</h2>
+        {todoDoneTasks.map((todoDoneTask) => (
+          <div className="singleDoneTask">{todoDoneTask}</div>
         ))}
       </div>
     </div>

@@ -1,21 +1,35 @@
-.singleTask{
-    width: 700px;
-    border: 1px black solid;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+.singleTask {
+  width: 700px;
+  border: 1px black solid;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 
-.deleteButton{
-    background-color: transparent;
-    border: 1px red solid;
-    width: 50px;
-    background-color: red;
-    color: white;
-    font-size: 36px;
+.deleteButton {
+  background-color: transparent;
+  border: 1px red solid;
+  width: 50px;
+  background-color: red;
+  color: white;
+  font-size: 36px;
 }
 
-.deleteButton:hover{
-    font-size: 24px;
-    background-color: #000000;
+.deleteButton:hover {
+  font-size: 24px;
+  background-color: #000000;
+}
+
+.doneButton {
+  background-color: transparent;
+  border: 1px #00ff00 solid;
+  width: 50px;
+  background-color: #00ff00;
+  color: white;
+  font-size: 30px;
+}
+
+.doneButton:hover {
+  font-size: 24px;
+  background-color: #000000;
 }
