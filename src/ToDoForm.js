@@ -31,6 +31,11 @@ const ToDoForm = () => {
     ]);
   };
 
+  const handleRemoveAll = () => {
+    setTodoTasks([]);
+    setTodoDoneTasks([]);
+  };
+
   return (
     <div className="ToDoForm">
       <form className="dupa">
@@ -44,6 +49,7 @@ const ToDoForm = () => {
         <button type="submit" onClick={addTask}>
           Wyslij
         </button>
+        <button onClick={handleRemoveAll}>Clear All</button>
       </form>
       <div className="tasksList">
         {todoTasks.map((singleTask, index) => (
