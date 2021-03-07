@@ -46,10 +46,14 @@ const ToDoForm = () => {
           placeholder="co dzis robisz"
           onChange={(e) => setTodoValue(e.target.value)}
         />
-        <button type="submit" onClick={addTask}>
-          Wyslij
-        </button>
-        <button onClick={handleRemoveAll}>Clear All</button>
+        <div className="buttonsContainer">
+          <button className="doneButton" type="submit" onClick={addTask}>
+            <i class="material-icons">send</i>
+          </button>
+          <button className="deleteButton" onClick={handleRemoveAll}>
+            <i class="material-icons">clear_all</i>
+          </button>
+        </div>
       </form>
       <div className="tasksList">
         {todoTasks.map((singleTask, index) => (
@@ -60,7 +64,7 @@ const ToDoForm = () => {
                 className="deleteButton"
                 onClick={() => handleRemove(index)}
               >
-                X
+                <i class="material-icons">clear</i>
               </button>
               <button
                 className="doneButton"
@@ -69,7 +73,7 @@ const ToDoForm = () => {
                   handleRemove(index);
                 }}
               >
-                ✔
+                <i class="material-icons">check</i>
               </button>
             </div>
           </div>
