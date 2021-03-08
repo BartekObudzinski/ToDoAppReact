@@ -4,20 +4,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background: rgb(0, 125, 255);
+  /*background: #ffd55a;*/
+  background: #6dd47e;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Lato", sans-serif;
+  color: #ffd55a;
 }
 
 .App {
   width: 100%;
-  background-color: rgb(13, 15, 133);
+  background-color: #293250;
   padding: 20px;
   height: 720px;
   width: 800px;
+  border-radius: 30px;
 }
 .ToDoForm {
   width: 100%;
@@ -28,19 +32,32 @@ body {
   justify-content: space-between;
   height: 50px;
 }
+
 .dupa input {
-  height: 75%;
+  height: 100%;
   font-size: 2rem;
   width: 80%;
+}
+.taskDone {
+  display: flex;
+  text-align: center;
 }
 .singleTask,
 .singleDoneTask {
   width: 100%;
-  border: 1px black solid;
+  border: 1px #6dd47e solid;
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
   height: 50px;
+  color: white;
+}
+.singleTask p,
+.singleDoneTask p {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  color: #ffd55a;
 }
 i {
   color: white;
@@ -69,5 +86,16 @@ button {
 }
 
 .doneButton:hover {
+  background-color: transparent;
+}
+
+.editButton {
+  background-color: transparent;
+  border: 1px #d9ff00 solid;
+  background-color: #d9ff00;
+  color: white;
+}
+
+.editButton:hover {
   background-color: transparent;
 }

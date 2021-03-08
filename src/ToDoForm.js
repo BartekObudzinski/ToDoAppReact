@@ -35,7 +35,6 @@ const ToDoForm = () => {
     setTodoTasks([]);
     setTodoDoneTasks([]);
   };
-
   return (
     <div className="ToDoForm">
       <form className="dupa">
@@ -60,6 +59,9 @@ const ToDoForm = () => {
           <div className="singleTask">
             <p>{singleTask}</p>
             <div className="buttonsContainer">
+              <button className="editButton">
+                <i class="material-icons">mode_edit</i>
+              </button>
               <button
                 className="deleteButton"
                 onClick={() => handleRemove(index)}
@@ -80,10 +82,10 @@ const ToDoForm = () => {
         ))}
       </div>
       <div className="tasksdone">
-        <h2>Wykonane taski</h2>
+        <h2>Zrobione taski</h2>
         {todoDoneTasks.map((todoDoneTask, index) => (
           <div className="singleDoneTask">
-            {todoDoneTask}
+            <p>{todoDoneTask}</p>
             <div className="buttonsContainer">
               <button
                 className="deleteButton"
