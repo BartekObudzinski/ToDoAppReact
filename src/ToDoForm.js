@@ -45,6 +45,9 @@ const ToDoForm = () => {
       setTodoValue("");
     }
   };
+
+  const isDoneTask =
+    !todoDoneTasks.length == 0 ? <h2>Zrobione taski</h2> : <h2></h2>;
   return (
     <div className="ToDoForm">
       <form className="dupa">
@@ -95,7 +98,7 @@ const ToDoForm = () => {
         ))}
       </div>
       <div className="tasksdone">
-        <h2>Zrobione taski</h2>
+        {isDoneTask}
         {todoDoneTasks.map((todoDoneTask, index) => (
           <div className="singleDoneTask">
             <p>{todoDoneTask}</p>
