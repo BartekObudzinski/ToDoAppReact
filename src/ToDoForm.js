@@ -35,6 +35,16 @@ const ToDoForm = () => {
     setTodoTasks([]);
     setTodoDoneTasks([]);
   };
+  const handleEdit = (index, editValue) => {
+    if (todoValue == "") {
+      setTodoValue(todoTasks[index]);
+    } else {
+      const editTodos = [...todoTasks];
+      editTodos[index] = editValue;
+      setTodoTasks(editTodos);
+      setTodoValue("");
+    }
+  };
   return (
     <div className="ToDoForm">
       <form className="dupa">
@@ -59,7 +69,10 @@ const ToDoForm = () => {
           <div className="singleTask">
             <p>{singleTask}</p>
             <div className="buttonsContainer">
-              <button className="editButton">
+              <button
+                onClick={() => handleEdit(index, todoValue)}
+                className="editButton"
+              >
                 <i class="material-icons">mode_edit</i>
               </button>
               <button

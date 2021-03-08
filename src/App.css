@@ -51,6 +51,7 @@ body {
   margin: 10px 0;
   height: 50px;
   color: white;
+  font-size: 2rem;
 }
 .singleTask p,
 .singleDoneTask p {
