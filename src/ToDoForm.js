@@ -59,9 +59,9 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
     if (input != "") {
       setTodoTasks([
         ...todoTasks,
-        { id: taskId, text: input, completed: false },
+        { text: input, id: taskId, completed: false },
       ]);
-      console.log(...todoTasks);
+      console.log(todoTasks);
       setInput("");
     }
   };

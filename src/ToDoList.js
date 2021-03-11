@@ -1,9 +1,12 @@
+import React from "react";
 import ToDoSingleTask from "./ToDoSingleTask";
 
-const ToDoList = () => {
+const ToDoList = ({ todoTasks }) => {
   return (
     <div className="tasksList">
-      <ToDoSingleTask />
+      {todoTasks.map((todoTask) => (
+        <ToDoSingleTask text={todoTask.text} />
+      ))}
     </div>
   );
 };

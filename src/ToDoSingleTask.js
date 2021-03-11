@@ -1,7 +1,7 @@
-const ToDoSingleTask = () => {
+const ToDoSingleTask = ({ text }) => {
   return (
     <div className="singleTask">
-      <p></p>
+      <p>{text}</p>
       <div className="buttonsContainer">
         <button className="editButton">
           <i class="material-icons">mode_edit</i>
