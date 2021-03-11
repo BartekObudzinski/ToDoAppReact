@@ -1,12 +1,4 @@
 const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
-  /*const handleRemove = (id) => {
-    //setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
-    //setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
-    const usun = todoTasks.filter((todoTask) => todoTask.id !== id);
-    setTodoTasks(usun);
-    console.log(todoTask);
-  };*/
-
   const handleRemove = () => {
     setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
   };
