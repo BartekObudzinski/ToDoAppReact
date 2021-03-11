@@ -1,18 +1,17 @@
-import { useState } from "react";
-
-const ToDoForm = () => {
-  const [todoValue, setTodoValue] = useState("");
+import React, { useState } from "react";
+const ToDoForm = ({ input, setInput }) => {
+  /*const [inputValue, setInputValue] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
   const [todoDoneTasks, setTodoDoneTasks] = useState([]);
-
+   
   const addTask = (e) => {
     e.preventDefault();
-    if (todoValue != "") {
-      setTodoTasks([...todoTasks, todoValue]);
-      setTodoValue("");
+    if (inputValue != "") {
+      setTodoTasks([...todoTasks, inputValue]);
+      setInputValue("");
     }
   };
-
+  
   const handleRemove = (index) => {
     setTodoTasks((prevValue) => [
       ...prevValue.slice(0, index),
@@ -30,12 +29,12 @@ const ToDoForm = () => {
       ...prevValue.slice(index + 1, prevValue.length),
     ]);
   };
-
-  const handleRemoveAll = () => {
+*/
+  /*const handleRemoveAll = () => {
     setTodoTasks([]);
-    setTodoDoneTasks([]);
-  };
-  const handleEdit = (index, editValue) => {
+    //  setTodoDoneTasks([]);
+  };*/
+  /* const handleEdit = (index, editValue) => {
     if (todoValue == "") {
       setTodoValue(todoTasks[index]);
     } else {
@@ -44,35 +43,48 @@ const ToDoForm = () => {
       setTodoTasks(editTodos);
       setTodoValue("");
     }
-  };
+  };*/
 
-  const isDoneTask =
+  /* const isDoneTask =
     !todoDoneTasks.length == 0 ? <h2>Zrobione taski</h2> : <h2></h2>;
+    */
+  const taskId = Math.floor(Math.random() * 10000);
+
+  const handleInputText = (e) => {
+    console.log(e.target.value);
+    console.log(taskId);
+    setInput(e.target.value);
+  };
   return (
     <div className="ToDoForm">
       <form className="dupa">
         <input
-          value={todoValue}
+          value={input}
           type="text"
           required
           placeholder="co dzis robisz"
-          onChange={(e) => setTodoValue(e.target.value)}
+          onChange={handleInputText}
         />
         <div className="buttonsContainer">
-          <button className="doneButton" type="submit" onClick={addTask}>
+          <button className="doneButton" type="submit">
             <i class="material-icons">send</i>
           </button>
-          <button className="deleteButton" onClick={handleRemoveAll}>
+          <button className="deleteButton">
             <i class="material-icons">clear_all</i>
           </button>
         </div>
       </form>
-      <div className="tasksList">
+    </div>
+  );
+};
+
+export default ToDoForm;
+/* <div className="tasksList">
         {todoTasks.map((singleTask, index) => (
           <div className="singleTask">
             <p>{singleTask}</p>
             <div className="buttonsContainer">
-              <button
+               <button
                 onClick={() => handleEdit(index, todoValue)}
                 className="editButton"
               >
@@ -113,8 +125,4 @@ const ToDoForm = () => {
           </div>
         ))}
       </div>
-    </div>
-  );
-};
-
-export default ToDoForm;
+    </div>*/

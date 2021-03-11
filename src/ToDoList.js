@@ -1,15 +1,11 @@
-const ToDoList = ({todoTasks}) => {
-    return ( 
-        <div className="todoList">
-            {todoTasks.map( (task) => {
-                <div className="singleTask" key={task.id}>
-                    <p>{task.body}</p>
-                    {console.log(task.id)}
-                </div>
-            })}
+import ToDoSingleTask from "./ToDoSingleTask";
 
-        </div>
-     );
-}
- 
+const ToDoList = () => {
+  return (
+    <div className="tasksList">
+      <ToDoSingleTask />
+    </div>
+  );
+};
+
 export default ToDoList;
