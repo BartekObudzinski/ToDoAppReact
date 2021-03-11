@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
-  /*const [inputValue, setInputValue] = useState("");
-  const [todoTasks, setTodoTasks] = useState([]);
-  const [todoDoneTasks, setTodoDoneTasks] = useState([]);
+  /*
    
-  const addTask = (e) => {
-    e.preventDefault();
-    if (inputValue != "") {
-      setTodoTasks([...todoTasks, inputValue]);
-      setInputValue("");
-    }
-  };
+ 
   
   const handleRemove = (index) => {
     setTodoTasks((prevValue) => [
@@ -30,10 +22,7 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
     ]);
   };
 */
-  /*const handleRemoveAll = () => {
-    setTodoTasks([]);
-    //  setTodoDoneTasks([]);
-  };*/
+
   /* const handleEdit = (index, editValue) => {
     if (todoValue == "") {
       setTodoValue(todoTasks[index]);
@@ -45,9 +34,6 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
     }
   };*/
 
-  /* const isDoneTask =
-    !todoDoneTasks.length == 0 ? <h2>Zrobione taski</h2> : <h2></h2>;
-    */
   const taskId = Math.floor(Math.random() * 10000);
 
   const handleInputText = (e) => {
@@ -95,36 +81,7 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
 };
 
 export default ToDoForm;
-/* <div className="tasksList">
-        {todoTasks.map((singleTask, index) => (
-          <div className="singleTask">
-            <p>{singleTask}</p>
-            <div className="buttonsContainer">
-               <button
-                onClick={() => handleEdit(index, todoValue)}
-                className="editButton"
-              >
-                <i class="material-icons">mode_edit</i>
-              </button>
-              <button
-                className="deleteButton"
-                onClick={() => handleRemove(index)}
-              >
-                <i class="material-icons">clear</i>
-              </button>
-              <button
-                className="doneButton"
-                onClick={() => {
-                  handleDone(index);
-                  handleRemove(index);
-                }}
-              >
-                <i class="material-icons">check</i>
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+/* 
       <div className="tasksdone">
         {isDoneTask}
         {todoDoneTasks.map((todoDoneTask, index) => (

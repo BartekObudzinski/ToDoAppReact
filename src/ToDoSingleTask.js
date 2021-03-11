@@ -1,4 +1,16 @@
-const ToDoSingleTask = ({ text }) => {
+const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
+  /*const handleRemove = (id) => {
+    //setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
+    //setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
+    const usun = todoTasks.filter((todoTask) => todoTask.id !== id);
+    setTodoTasks(usun);
+    console.log(todoTask);
+  };*/
+
+  const handleRemove = () => {
+    setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
+  };
+
   return (
     <div className="singleTask">
       <p>{text}</p>
@@ -9,7 +21,7 @@ const ToDoSingleTask = ({ text }) => {
         <button className="doneButton">
           <i class="material-icons">check</i>
         </button>
-        <button className="deleteButton">
+        <button className="deleteButton" onClick={handleRemove}>
           <i class="material-icons">clear</i>
         </button>
       </div>

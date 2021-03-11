@@ -1,11 +1,17 @@
 import React from "react";
 import ToDoSingleTask from "./ToDoSingleTask";
 
-const ToDoList = ({ todoTasks }) => {
+const ToDoList = ({ todoTasks, setTodoTasks }) => {
   return (
     <div className="tasksList">
       {todoTasks.map((todoTask) => (
-        <ToDoSingleTask text={todoTask.text} />
+        <ToDoSingleTask
+          todoTasks={todoTasks}
+          setTodoTasks={setTodoTasks}
+          key={todoTask.id}
+          text={todoTask.text}
+          todoTask={todoTask}
+        />
       ))}
     </div>
   );

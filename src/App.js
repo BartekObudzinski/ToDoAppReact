@@ -14,7 +14,7 @@ function App() {
         todoTasks={todoTasks}
         setTodoTasks={setTodoTasks}
       />
-      <ToDoList todoTasks={todoTasks} />
+      <ToDoList todoTasks={todoTasks} setTodoTasks={setTodoTasks} />
     </div>
   );
 }
