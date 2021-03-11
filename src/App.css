@@ -24,10 +24,7 @@ body {
   width: 800px;
   border-radius: 30px;
 }
-.ToDoForm {
-  width: 100%;
-  height: 100%;
-}
+
 .dupa {
   display: flex;
   justify-content: space-between;
