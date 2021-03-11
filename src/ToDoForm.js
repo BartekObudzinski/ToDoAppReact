@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const ToDoForm = ({ input, setInput }) => {
+const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
   /*const [inputValue, setInputValue] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
   const [todoDoneTasks, setTodoDoneTasks] = useState([]);
@@ -51,10 +51,26 @@ const ToDoForm = ({ input, setInput }) => {
   const taskId = Math.floor(Math.random() * 10000);
 
   const handleInputText = (e) => {
-    console.log(e.target.value);
-    console.log(taskId);
     setInput(e.target.value);
   };
+
+  const addTask = (e) => {
+    e.preventDefault();
+    if (input != "") {
+      setTodoTasks([
+        ...todoTasks,
+        { id: taskId, text: input, completed: false },
+      ]);
+      console.log(...todoTasks);
+      setInput("");
+    }
+  };
+
+  const handleRemoveAll = () => {
+    console.log("usuwam cala liste");
+    setTodoTasks([]);
+  };
+
   return (
     <div className="ToDoForm">
       <form className="dupa">
@@ -66,10 +82,10 @@ const ToDoForm = ({ input, setInput }) => {
           onChange={handleInputText}
         />
         <div className="buttonsContainer">
-          <button className="doneButton" type="submit">
+          <button className="doneButton" type="submit" onClick={addTask}>
             <i class="material-icons">send</i>
           </button>
-          <button className="deleteButton">
+          <button className="deleteButton" onClick={handleRemoveAll}>
             <i class="material-icons">clear_all</i>
           </button>
         </div>

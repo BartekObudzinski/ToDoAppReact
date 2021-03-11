@@ -8,7 +8,12 @@ function App() {
 
   return (
     <div className="App">
-      <ToDoForm input={input} setInput={setInput} />
+      <ToDoForm
+        input={input}
+        setInput={setInput}
+        todoTasks={todoTasks}
+        setTodoTasks={setTodoTasks}
+      />
     </div>
   );
 }
