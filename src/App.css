@@ -25,13 +25,13 @@ body {
   border-radius: 30px;
 }
 
-.dupa {
+.ToDoFormContainer {
   display: flex;
   justify-content: space-between;
   height: 50px;
 }
 
-.dupa input {
+.ToDoFormContainer input {
   height: 100%;
   font-size: 2rem;
   width: 80%;

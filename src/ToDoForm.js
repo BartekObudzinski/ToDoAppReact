@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { v4 as taskId } from "uuid";
+
 const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
   /*
   const handleDone = (index) => {
@@ -6,7 +7,7 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
   };
 */
 
-  const taskId = Math.floor(Math.random() * 10000);
+  //const taskId = Math.floor(Math.random() * 10000);
 
   const handleInputText = (e) => {
     setInput(e.target.value);
@@ -17,21 +18,21 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
     if (input != "") {
       setTodoTasks([
         ...todoTasks,
-        { text: input, id: taskId, completed: false },
+        { text: input, id: taskId(), completed: false },
       ]);
+
       console.log(todoTasks);
       setInput("");
     }
   };
 
   const handleRemoveAll = () => {
-    console.log("usuwam cala liste");
     setTodoTasks([]);
   };
 
   return (
     <div className="ToDoForm">
-      <form className="dupa">
+      <form className="ToDoFormContainer">
         <input
           value={input}
           type="text"
