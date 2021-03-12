@@ -1,28 +1,20 @@
 import { v4 as taskId } from "uuid";
 
-const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
-  /*
-  const handleDone = (index) => {
-    setTodoDoneTasks((done) => done.concat(todoTasks[index]));
-  };
-*/
-
-  //const taskId = Math.floor(Math.random() * 10000);
-
+const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
   const handleInputText = (e) => {
-    setInput(e.target.value);
+    setInputText(e.target.value);
   };
 
   const addTask = (e) => {
     e.preventDefault();
-    if (input != "") {
+    if (inputText != "") {
       setTodoTasks([
         ...todoTasks,
-        { text: input, id: taskId(), completed: false },
+        { text: inputText, id: taskId(), completed: false },
       ]);
 
       console.log(todoTasks);
-      setInput("");
+      setInputText("");
     }
   };
 
@@ -34,7 +26,7 @@ const ToDoForm = ({ input, setInput, todoTasks, setTodoTasks }) => {
     <div className="ToDoForm">
       <form className="ToDoFormContainer">
         <input
-          value={input}
+          value={inputText}
           type="text"
           required
           placeholder="co dzis robisz"

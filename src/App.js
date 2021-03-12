@@ -3,14 +3,14 @@ import { useState } from "react";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 function App() {
-  const [input, setInput] = useState("");
+  const [inputText, setInputText] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
 
   return (
     <div className="App">
       <ToDoForm
-        input={input}
-        setInput={setInput}
+        inputText={inputText}
+        setInputText={setInputText}
         todoTasks={todoTasks}
         setTodoTasks={setTodoTasks}
       />
