@@ -50,6 +50,7 @@ body {
   height: 50px;
   color: white;
   font-size: 2rem;
+  animation: task 0.5s ease-in-out;
 }
 .singleTask p,
 .singleDoneTask p {
@@ -97,4 +98,13 @@ button {
 
 .editButton:hover {
   background-color: transparent;
+}
+
+@keyframes task {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

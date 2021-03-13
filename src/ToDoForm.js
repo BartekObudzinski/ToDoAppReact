@@ -7,13 +7,12 @@ const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
 
   const addTask = (e) => {
     e.preventDefault();
-    if (inputText != "") {
+    if (inputText !== "") {
       setTodoTasks([
         ...todoTasks,
         { text: inputText, id: taskId(), completed: false },
       ]);
 
-      console.log(todoTasks);
       setInputText("");
     }
   };
