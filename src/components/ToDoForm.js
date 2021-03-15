@@ -1,5 +1,5 @@
 import { v4 as taskId } from "uuid";
-
+import Button from "./Button";
 const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
   const handleInputText = (e) => {
     setInputText(e.target.value);
@@ -32,12 +32,12 @@ const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
           onChange={handleInputText}
         />
         <div className="buttonsContainer">
-          <button className="doneButton" type="submit" onClick={addTask}>
+          <Button onClickFn={addTask}>
             <i class="material-icons">send</i>
-          </button>
-          <button className="deleteButton" onClick={handleRemoveAll}>
+          </Button>
+          <Button onClickFn={handleRemoveAll}>
             <i class="material-icons">clear_all</i>
-          </button>
+          </Button>
         </div>
       </form>
     </div>
@@ -45,3 +45,9 @@ const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
 };
 
 export default ToDoForm;
+/*  <button className="doneButton" type="submit" onClick={addTask}>
+            <i class="material-icons">send</i>
+          </button>
+          <button className="deleteButton" onClick={handleRemoveAll}>
+            <i class="material-icons">clear_all</i>
+          </button> */
