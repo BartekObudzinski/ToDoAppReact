@@ -32,10 +32,10 @@ const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
           onChange={handleInputText}
         />
         <div className="buttonsContainer">
-          <Button onClickFn={addTask}>
+          <Button onClickFn={addTask} style="doneButton" type="submit">
             <i class="material-icons">send</i>
           </Button>
-          <Button onClickFn={handleRemoveAll}>
+          <Button onClickFn={handleRemoveAll} style="deleteButton">
             <i class="material-icons">clear_all</i>
           </Button>
         </div>
@@ -45,9 +45,3 @@ const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
 };
 
 export default ToDoForm;
-/*  <button className="doneButton" type="submit" onClick={addTask}>
-            <i class="material-icons">send</i>
-          </button>
-          <button className="deleteButton" onClick={handleRemoveAll}>
-            <i class="material-icons">clear_all</i>
-          </button> */
