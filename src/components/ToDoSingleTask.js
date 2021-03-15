@@ -25,13 +25,3 @@ const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
 };
 
 export default ToDoSingleTask;
-/*<div className="buttonsContainer">
-        <button className="editButton">
-          <i class="material-icons">mode_edit</i>
-        </button>
-        <button className="doneButton">
-          <i class="material-icons">check</i>
-        </button>
-        <button className="deleteButton" onClick={handleRemove}>
-          <i class="material-icons">clear</i>
-        </button>*/
