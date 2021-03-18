@@ -19,16 +19,12 @@ const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
     );
   };
 
-  const checkChecked = () => {
-    console.log(todoTask.completed);
-  };
-
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
       <p>{text}</p>
       <div className="buttonsContainer">
         {todoTask.completed ? null : (
-          <Button style="editButton" onClickFn={checkChecked}>
+          <Button style="editButton">
             <i class="material-icons">mode_edit</i>
           </Button>
         )}
