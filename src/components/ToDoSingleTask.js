@@ -5,15 +5,31 @@ const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
   const handleRemove = () => {
     setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
   };
+  const handleDone = () => {
+    setTodoTasks(
+      todoTasks.map((item) => {
+        if (item.id === todoTask.id) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        }
+        return item;
+      })
+    );
+  };
 
+  const checkChecked = () => {
+    console.log(todoTask.completed);
+  };
   return (
     <div className="singleTask">
       <p>{text}</p>
       <div className="buttonsContainer">
-        <Button style="editButton">
+        <Button style="editButton" onClickFn={checkChecked}>
           <i class="material-icons">mode_edit</i>
         </Button>
-        <Button style="doneButton">
+        <Button style="doneButton" onClickFn={handleDone}>
           <i class="material-icons">check</i>
         </Button>
         <Button style="deleteButton" onClickFn={handleRemove}>

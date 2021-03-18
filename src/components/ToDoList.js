@@ -1,6 +1,6 @@
 import React from "react";
 import ToDoSingleTask from "./ToDoSingleTask";
-import ToDoDoneSingleTask from "./ToDoDoneSingleTask";
+
 const ToDoList = ({ todoTasks, setTodoTasks }) => {
   return (
     <div className="tasksList">
@@ -13,7 +13,6 @@ const ToDoList = ({ todoTasks, setTodoTasks }) => {
           todoTask={todoTask}
         />
       ))}
-      <ToDoDoneSingleTask />
     </div>
   );
 };
