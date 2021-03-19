@@ -1,7 +1,7 @@
 import React from "react";
 import ToDoSingleTask from "./ToDoSingleTask";
 
-const ToDoList = ({ todoTasks, setTodoTasks }) => {
+const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
   return (
     <div className="tasksList">
       {todoTasks.map((todoTask) => (
@@ -11,6 +11,8 @@ const ToDoList = ({ todoTasks, setTodoTasks }) => {
           key={todoTask.id}
           text={todoTask.text}
           todoTask={todoTask}
+          edit={edit}
+          setEdit={setEdit}
         />
       ))}
     </div>

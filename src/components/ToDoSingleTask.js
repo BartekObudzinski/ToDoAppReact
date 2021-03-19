@@ -1,7 +1,14 @@
 import React from "react";
 import Button from "./Button";
-
-const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
+import Edit from "./Edit";
+const ToDoSingleTask = ({
+  edit,
+  setEdit,
+  text,
+  todoTasks,
+  setTodoTasks,
+  todoTask,
+}) => {
   const handleRemove = () => {
     setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
   };
@@ -19,12 +26,17 @@ const ToDoSingleTask = ({ text, todoTasks, setTodoTasks, todoTask }) => {
     );
   };
 
+  const isEdit = () => {
+    setEdit(!edit);
+    console.log(edit);
+  };
+
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
       <p>{text}</p>
       <div className="buttonsContainer">
         {todoTask.completed ? null : (
-          <Button style="editButton">
+          <Button style="editButton" onClickFn={isEdit}>
             <i class="material-icons">mode_edit</i>
           </Button>
         )}
