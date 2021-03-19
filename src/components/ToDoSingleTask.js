@@ -31,7 +31,7 @@ const ToDoSingleTask = ({
   };
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
-      {edit ? <p>{text}</p> : <Edit />}
+      {edit ? <p>{text}</p> : <Edit text={todoTask.text} />}
       <div className="buttonsContainer">
         {todoTask.completed ? null : (
           <Button style="editButton" onClickFn={isEdit}>
