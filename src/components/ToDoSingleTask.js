@@ -1,9 +1,8 @@
 import React from "react";
 import Button from "./Button";
-import Edit from "./Edit";
+
 const ToDoSingleTask = ({
-  edit,
-  setEdit,
+  isEdit,
   text,
   todoTasks,
   setTodoTasks,
@@ -24,11 +23,6 @@ const ToDoSingleTask = ({
         return item;
       })
     );
-  };
-
-  const isEdit = () => {
-    setEdit(!edit);
-    console.log(edit);
   };
 
   return (
