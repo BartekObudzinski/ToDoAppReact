@@ -31,7 +31,16 @@ const ToDoSingleTask = ({
   };
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
-      {edit ? <p>{text}</p> : <Edit text={todoTask.text} />}
+      {edit ? (
+        <p>{text}</p>
+      ) : (
+        <Edit
+          text={todoTask.text}
+          setTodoTasks={setTodoTasks}
+          isEdit={isEdit}
+          todoTask={todoTask}
+        />
+      )}
       <div className="buttonsContainer">
         {todoTask.completed ? null : (
           <Button style="editButton" onClickFn={isEdit}>
