@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "./Button";
 
-const Edit = () => <h1>siema</h1>;
+const Edit = () => <input type="text" />;
+
 export default Edit;

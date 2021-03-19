@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "./Button";
-
+import Edit from "./Edit";
 const ToDoSingleTask = ({
-  isEdit,
+  edit,
+  setEdit,
   text,
   todoTasks,
   setTodoTasks,
@@ -24,10 +25,13 @@ const ToDoSingleTask = ({
       })
     );
   };
-
+  const isEdit = () => {
+    setEdit(!edit);
+    console.log(edit);
+  };
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
-      <p>{text}</p>
+      {edit ? <p>{text}</p> : <Edit />}
       <div className="buttonsContainer">
         {todoTask.completed ? null : (
           <Button style="editButton" onClickFn={isEdit}>
