@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const Edit = ({ text, setTodoTasks, isEdit, todoTask }) => {
+const Edit = ({ text, isEdit, todoTask }) => {
   const [editValue, setEditValue] = useState(text);
 
   const handleEdit = (e) => {
@@ -11,17 +11,17 @@ const Edit = ({ text, setTodoTasks, isEdit, todoTask }) => {
   const handleChangeEdit = (e) => {
     e.preventDefault();
     todoTask.text = editValue;
-
     isEdit();
   };
 
   return (
     <>
       <input type="text" value={editValue} onChange={handleEdit} />
-      <Button onClickFn={handleChangeEdit} style="editButton">
-        {" "}
-        xd
-      </Button>
+      <div className="buttonsContainer">
+        <Button onClickFn={handleChangeEdit} style="editButton">
+          <i class="material-icons">mode_edit</i>
+        </Button>
+      </div>
     </>
   );
 };

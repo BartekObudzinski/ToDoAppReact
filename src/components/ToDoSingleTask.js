@@ -32,7 +32,20 @@ const ToDoSingleTask = ({
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
       {edit ? (
-        <p>{text}</p>
+        <>
+          <p>{text}</p>
+          <div className="buttonsContainer">
+            <Button style="editButton" onClickFn={isEdit}>
+              <i class="material-icons">mode_edit</i>
+            </Button>
+            <Button style="doneButton" onClickFn={handleDone}>
+              <i class="material-icons">check</i>
+            </Button>
+            <Button style="deleteButton" onClickFn={handleRemove}>
+              <i class="material-icons">clear</i>
+            </Button>
+          </div>
+        </>
       ) : (
         <Edit
           text={todoTask.text}
@@ -41,19 +54,6 @@ const ToDoSingleTask = ({
           todoTask={todoTask}
         />
       )}
-      <div className="buttonsContainer">
-        {todoTask.completed ? null : (
-          <Button style="editButton" onClickFn={isEdit}>
-            <i class="material-icons">mode_edit</i>
-          </Button>
-        )}
-        <Button style="doneButton" onClickFn={handleDone}>
-          <i class="material-icons">check</i>
-        </Button>
-        <Button style="deleteButton" onClickFn={handleRemove}>
-          <i class="material-icons">clear</i>
-        </Button>
-      </div>
     </div>
   );
 };
