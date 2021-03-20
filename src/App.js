@@ -5,7 +5,7 @@ import ToDoList from "./components/ToDoList";
 function App() {
   const [inputText, setInputText] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState(undefined);
   return (
     <div className="App">
       <ToDoForm

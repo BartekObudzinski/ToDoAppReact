@@ -3,45 +3,35 @@ import Button from "./Button";
 import Edit from "./Edit";
 const ToDoSingleTask = ({
   edit,
-  setEdit,
-  text,
-  todoTasks,
-  setTodoTasks,
+  handleEdit,
   todoTask,
+  handleRemove,
+  handleDone,
 }) => {
-  const handleRemove = () => {
-    setTodoTasks(todoTasks.filter((el) => el.id !== todoTask.id));
+  const onRemoveClick = () => {
+    handleRemove(todoTask.id);
   };
-  const handleDone = () => {
-    setTodoTasks(
-      todoTasks.map((item) => {
-        if (item.id === todoTask.id) {
-          return {
-            ...item,
-            completed: !item.completed,
-          };
-        }
-        return item;
-      })
-    );
+
+  const onDoneClick = () => {
+    handleDone(todoTask.id);
   };
-  const isEdit = () => {
-    setEdit(!edit);
-    console.log(edit);
+
+  const onEditClick = () => {
+    handleEdit(todoTask.id);
   };
   return (
     <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
-      {edit ? (
+      {todoTask.id !== edit ? (
         <>
-          <p>{text}</p>
+          <p>{todoTask.text}</p>
           <div className="buttonsContainer">
-            <Button style="editButton" onClickFn={isEdit}>
+            <Button style="editButton" onClickFn={onEditClick}>
               <i class="material-icons">mode_edit</i>
             </Button>
-            <Button style="doneButton" onClickFn={handleDone}>
+            <Button style="doneButton" onClickFn={onDoneClick}>
               <i class="material-icons">check</i>
             </Button>
-            <Button style="deleteButton" onClickFn={handleRemove}>
+            <Button style="deleteButton" onClickFn={onRemoveClick}>
               <i class="material-icons">clear</i>
             </Button>
           </div>
@@ -49,9 +39,9 @@ const ToDoSingleTask = ({
       ) : (
         <Edit
           text={todoTask.text}
-          setTodoTasks={setTodoTasks}
-          isEdit={isEdit}
           todoTask={todoTask}
+          key={todoTask.id}
+          handleEditTask={handleEdit}
         />
       )}
     </div>
