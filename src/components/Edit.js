@@ -11,7 +11,7 @@ const Edit = ({ text, handleEditTask, todoTask }) => {
   const handleChangeEdit = (e) => {
     e.preventDefault();
     todoTask.text = editValue;
-    handleEditTask(undefined);
+    handleEditTask();
   };
 
   return (
