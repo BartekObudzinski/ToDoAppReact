@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "./Button";
-
+import Button from "../Button/Button";
+import styles from "./Edit.module.scss";
 const Edit = ({ text, handleEditTask, todoTask }) => {
   const [editValue, setEditValue] = useState(text);
 
@@ -16,9 +16,14 @@ const Edit = ({ text, handleEditTask, todoTask }) => {
 
   return (
     <>
-      <input type="text" value={editValue} onChange={handleEdit} />
+      <input
+        className={styles.inputEdit}
+        type="text"
+        value={editValue}
+        onChange={handleEdit}
+      />
       <div className="buttonsContainer">
-        <Button onClickFn={handleChangeEdit} style="doneButton">
+        <Button onClickFn={handleChangeEdit} style={styles.buttonSend}>
           <i class="material-icons">check</i>
         </Button>
       </div>

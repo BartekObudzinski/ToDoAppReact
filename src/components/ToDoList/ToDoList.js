@@ -1,6 +1,7 @@
 import React from "react";
-import ToDoSingleTask from "./ToDoSingleTask";
-
+import ToDoSingleTask from "../ToDoSingleTask/ToDoSingleTask";
+import Button from "../Button/Button";
+import styles from "./ToDoList.module.scss";
 const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
   const handleRemove = (taskId) => {
     setTodoTasks(todoTasks.filter((task) => task.id !== taskId));
@@ -23,6 +24,11 @@ const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
   const handleEdit = (taskId) => {
     setEdit(taskId);
   };
+
+  const handleRemoveAll = () => {
+    setTodoTasks([]);
+  };
+  const doneCounter = todoTasks.filter((done) => done.completed === true);
   return (
     <div className="tasksList">
       {todoTasks.map((todoTask) => (
@@ -36,6 +42,17 @@ const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
           handleEdit={handleEdit}
         />
       ))}
+      {todoTasks.length <= 0 ? null : (
+        <div className={styles.tasksInformation}>
+          <p>
+            Jest {todoTasks.length} zadan, {doneCounter.length} zrobionych,
+            pozostało {todoTasks.length - doneCounter.length}
+          </p>
+          <Button onClickFn={handleRemoveAll} style={styles.buttonClear}>
+            Clear all
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

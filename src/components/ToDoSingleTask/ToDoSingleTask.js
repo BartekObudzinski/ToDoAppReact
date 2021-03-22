@@ -1,6 +1,7 @@
 import React from "react";
-import Button from "./Button";
-import Edit from "./Edit";
+import Button from "../Button/Button";
+import Edit from "../Edit/Edit";
+import styles from "./ToDoSingleTask.module.scss";
 const ToDoSingleTask = ({
   edit,
   handleEdit,
@@ -20,18 +21,22 @@ const ToDoSingleTask = ({
     handleEdit(todoTask.id);
   };
   return (
-    <div className={todoTask.completed ? "singleTaskDone" : "singleTask"}>
+    <div
+      className={todoTask.completed ? styles.singleTaskDone : styles.singleTask}
+    >
       {todoTask.id !== edit ? (
         <>
           <p>{todoTask.text}</p>
           <div className="buttonsContainer">
-            <Button style="editButton" onClickFn={onEditClick}>
-              <i class="material-icons">mode_edit</i>
-            </Button>
-            <Button style="doneButton" onClickFn={onDoneClick}>
+            {todoTask.completed ? null : (
+              <Button style={styles.buttonEdit} onClickFn={onEditClick}>
+                <i class="material-icons">mode_edit</i>
+              </Button>
+            )}
+            <Button style={styles.buttonDone} onClickFn={onDoneClick}>
               <i class="material-icons">check</i>
             </Button>
-            <Button style="deleteButton" onClickFn={onRemoveClick}>
+            <Button style={styles.buttonDelete} onClickFn={onRemoveClick}>
               <i class="material-icons">clear</i>
             </Button>
           </div>

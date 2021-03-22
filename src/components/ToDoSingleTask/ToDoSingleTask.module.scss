@@ -1,0 +1,57 @@
+.singleTask {
+  width: 100%;
+  border-bottom: 1px #f3ca20 solid;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  height: 50px;
+  font-size: 1.9rem;
+
+  p {
+    display: inline-block;
+    max-width: 600px;
+  }
+
+  &Done {
+    width: 100%;
+    border-bottom: 1px #00ff00 solid;
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+    height: 50px;
+    font-size: 1.9rem;
+    opacity: 0.5;
+    p {
+      display: inline-block;
+      max-width: 600px;
+      text-decoration: line-through;
+      text-decoration-color: #00ff00;
+    }
+  }
+}
+
+.button {
+  &Edit {
+    border: 1px #d9ff00 solid;
+    &:hover {
+      background-color: #d9ff00;
+    }
+  }
+
+  &Done {
+    border: 1px #00ff00 solid;
+    &:hover {
+      background-color: #00ff00;
+    }
+  }
+
+  &Delete {
+    border: 1px red solid;
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+i {
+  color: white;
+}
