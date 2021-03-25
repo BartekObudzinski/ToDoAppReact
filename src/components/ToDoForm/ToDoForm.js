@@ -29,7 +29,7 @@ const ToDoForm = ({ inputText, setInputText, todoTasks, setTodoTasks }) => {
         onChange={handleInputText}
       />
       <div className="buttonsContainer">
-        <Button onClickFn={addTask} style="doneButton" type="submit">
+        <Button onClickFn={addTask} style={styles.buttonSend} type="submit">
           <i class="material-icons">send</i>
         </Button>
       </div>
