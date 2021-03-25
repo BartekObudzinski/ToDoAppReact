@@ -9,7 +9,11 @@ function App() {
   const [edit, setEdit] = useState();
 
   useEffect(() => {
-    document.title = `Masz ${todoTasks.length} zadań`;
+    {
+      todoTasks.length < 1
+        ? (document.title = `Aplikacja ToDo`)
+        : (document.title = `Masz ${todoTasks.length} zadań`);
+    }
   });
   return (
     <div className="App">
