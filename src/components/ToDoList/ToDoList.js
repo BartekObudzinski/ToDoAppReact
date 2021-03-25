@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import ToDoSingleTask from "../ToDoSingleTask/ToDoSingleTask";
 import Button from "../Button/Button";
 import styles from "./ToDoList.module.scss";
+
 const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
   const handleRemove = (taskId) => {
     setTodoTasks(todoTasks.filter((task) => task.id !== taskId));
@@ -36,7 +37,6 @@ const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
           key={todoTask.id}
           todoTask={todoTask}
           edit={edit}
-          setEdit={setEdit}
           handleRemove={handleRemove}
           handleDone={handleDone}
           handleEdit={handleEdit}
