@@ -36,7 +36,6 @@ const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
         <ToDoSingleTask
           key={todoTask.id}
           todoTask={todoTask}
-          edit={edit}
           handleRemove={handleRemove}
           handleDone={handleDone}
           handleEdit={handleEdit}
