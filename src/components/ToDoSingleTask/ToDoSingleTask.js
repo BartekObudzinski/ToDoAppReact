@@ -26,6 +26,7 @@ const ToDoSingleTask = ({ handleEdit, todoTask, handleRemove, handleDone }) => {
           {todoTask.id !== edit ? (
             <>
               <p>{todoTask.text}</p>
+
               <div className="buttonsContainer">
                 {todoTask.completed ? null : (
                   <Button style={styles.buttonEdit} onClickFn={onEditClick}>

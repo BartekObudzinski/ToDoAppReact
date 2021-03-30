@@ -7,6 +7,7 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
   const [edit, setEdit] = useState();
+  const [startDate, setStartDate] = useState(new Date());
 
   useEffect(() => {
     {
@@ -23,6 +24,8 @@ function App() {
           setInputText={setInputText}
           todoTasks={todoTasks}
           setTodoTasks={setTodoTasks}
+          startDate={startDate}
+          setStartDate={setStartDate}
         />
 
         <ToDoList
