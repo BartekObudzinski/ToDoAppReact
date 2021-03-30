@@ -3,7 +3,7 @@ import ToDoSingleTask from "../ToDoSingleTask/ToDoSingleTask";
 import Button from "../Button/Button";
 import styles from "./ToDoList.module.scss";
 
-const ToDoList = ({ edit, setEdit, todoTasks, setTodoTasks }) => {
+const ToDoList = ({ setEdit, todoTasks, setTodoTasks }) => {
   const handleRemove = (taskId) => {
     setTodoTasks(todoTasks.filter((task) => task.id !== taskId));
   };

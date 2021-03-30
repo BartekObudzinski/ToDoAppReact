@@ -26,7 +26,6 @@ function App() {
         />
 
         <ToDoList
-          edit={edit}
           setEdit={setEdit}
           todoTasks={todoTasks}
           setTodoTasks={setTodoTasks}
