@@ -45,7 +45,7 @@ const ToDoForm = ({
         maxLength="30"
         onChange={handleInputText}
       />
-      <input type="date" value={date} onChange={handleDate} />;
+      <input required type="date" value={date} onChange={handleDate} />;
       <div className="buttonsContainer">
         <Button onClickFn={addTask} style={styles.buttonSend} type="submit">
           <i class="material-icons">send</i>

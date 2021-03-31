@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import Edit from "../Edit/Edit";
 import styles from "./ToDoSingleTask.module.scss";
 import AppContext from "../../Contexts/context";
 const ToDoSingleTask = ({ handleEdit, todoTask, handleRemove, handleDone }) => {
+  const [hidden, setHidden] = useState(false);
   const onRemoveClick = () => {
     handleRemove(todoTask.id);
   };
@@ -15,6 +16,10 @@ const ToDoSingleTask = ({ handleEdit, todoTask, handleRemove, handleDone }) => {
   const onEditClick = () => {
     handleEdit(todoTask.id);
   };
+
+  const toggleHidden = () => {
+    setHidden(!hidden);
+  };
   return (
     <AppContext.Consumer>
       {(edit) => (
@@ -25,7 +30,20 @@ const ToDoSingleTask = ({ handleEdit, todoTask, handleRemove, handleDone }) => {
         >
           {todoTask.id !== edit ? (
             <>
-              <p>{todoTask.text}</p>
+              {todoTask.text.length <= 20 ? (
+                <p>{todoTask.text}</p>
+              ) : hidden ? (
+                <>
+                  <p>{todoTask.text.slice(0, 20) + "..."}</p>
+
+                  <Button onClickFn={toggleHidden}>Czytaj wiecej</Button>
+                </>
+              ) : (
+                <>
+                  <p>{todoTask.text}</p>
+                  <Button onClickFn={toggleHidden}>schowaj</Button>
+                </>
+              )}
 
               <div className="buttonsContainer">
                 {todoTask.completed ? null : (
