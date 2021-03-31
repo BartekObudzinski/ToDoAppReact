@@ -3,7 +3,7 @@ import ToDoSingleTask from "../ToDoSingleTask/ToDoSingleTask";
 import Button from "../Button/Button";
 import styles from "./ToDoList.module.scss";
 
-const ToDoList = ({ setEdit, todoTasks, setTodoTasks }) => {
+const ToDoList = ({ date, setEdit, todoTasks, setTodoTasks }) => {
   const handleRemove = (taskId) => {
     setTodoTasks(todoTasks.filter((task) => task.id !== taskId));
   };
@@ -27,20 +27,26 @@ const ToDoList = ({ setEdit, todoTasks, setTodoTasks }) => {
   };
 
   const handleRemoveAll = () => {
-    setTodoTasks([]);
+    //setTodoTasks([]);
+    console.log(...todoTasks);
   };
+
   const doneCounter = todoTasks.filter((done) => done.completed === true);
   return (
     <div className="tasksList">
-      {todoTasks.map((todoTask) => (
-        <ToDoSingleTask
-          key={todoTask.id}
-          todoTask={todoTask}
-          handleRemove={handleRemove}
-          handleDone={handleDone}
-          handleEdit={handleEdit}
-        />
-      ))}
+      {todoTasks.map(
+        (todoTask) =>
+          todoTask.date === date && (
+            <ToDoSingleTask
+              key={todoTask.id}
+              todoTask={todoTask}
+              handleRemove={handleRemove}
+              handleDone={handleDone}
+              handleEdit={handleEdit}
+            />
+          )
+      )}
+
       {todoTasks.length <= 0 ? null : (
         <div className={styles.tasksInformation}>
           <p>

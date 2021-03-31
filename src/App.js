@@ -7,8 +7,7 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
   const [edit, setEdit] = useState();
-  const [startDate, setStartDate] = useState(new Date());
-
+  const [date, setDate] = useState(new Date());
   useEffect(() => {
     {
       todoTasks.length < 1
@@ -24,14 +23,15 @@ function App() {
           setInputText={setInputText}
           todoTasks={todoTasks}
           setTodoTasks={setTodoTasks}
-          startDate={startDate}
-          setStartDate={setStartDate}
+          date={date}
+          setDate={setDate}
         />
 
         <ToDoList
           setEdit={setEdit}
           todoTasks={todoTasks}
           setTodoTasks={setTodoTasks}
+          date={date}
         />
       </AppContext.Provider>
     </div>
