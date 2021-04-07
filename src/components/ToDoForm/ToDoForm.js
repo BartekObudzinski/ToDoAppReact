@@ -21,7 +21,7 @@ const ToDoForm = ({
 
   const addTask = (e) => {
     e.preventDefault();
-    if (inputText !== "") {
+    if (inputText) {
       setTodoTasks([
         ...todoTasks,
         {
