@@ -27,7 +27,8 @@ const ToDoList = ({ date, setEdit, todoTasks, setTodoTasks }) => {
   };
 
   const handleRemoveAll = () => {
-    setTodoTasks([]);
+    //setTodoTasks([]);
+    console.log(...todoTasks);
   };
 
   const doneCounter = todoTasks.filter((done) => done.completed === true);

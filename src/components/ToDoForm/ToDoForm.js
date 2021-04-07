@@ -11,6 +11,8 @@ const ToDoForm = ({
   todoTasks,
   setTodoTasks,
 }) => {
+  const todayDate = new Date();
+
   const handleInputText = (e) => {
     setInputText(e.target.value);
   };
@@ -45,7 +47,7 @@ const ToDoForm = ({
         maxLength="30"
         onChange={handleInputText}
       />
-      <input required type="date" value={date} onChange={handleDate} />;
+      <input required type="date" value={date} onChange={handleDate} />
       <div className="buttonsContainer">
         <Button onClickFn={addTask} style={styles.buttonSend} type="submit">
           <i class="material-icons">send</i>

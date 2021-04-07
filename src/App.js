@@ -7,7 +7,8 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [todoTasks, setTodoTasks] = useState([]);
   const [edit, setEdit] = useState();
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState();
+
   useEffect(() => {
     {
       todoTasks.length < 1

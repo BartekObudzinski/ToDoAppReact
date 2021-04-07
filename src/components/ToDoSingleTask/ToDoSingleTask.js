@@ -46,7 +46,7 @@ const ToDoSingleTask = ({ handleEdit, todoTask, handleRemove, handleDone }) => {
               )}
 
               <div className="buttonsContainer">
-                {todoTask.completed ? null : (
+                {todoTask.completed && (
                   <Button style={styles.buttonEdit} onClickFn={onEditClick}>
                     <i class="material-icons">mode_edit</i>
                   </Button>
